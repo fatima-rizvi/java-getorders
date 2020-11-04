@@ -36,4 +36,10 @@ public class CustomerServiceImpl implements CustomerService{
         return customerrepo.findById(customerID)
                 .orElseThrow(() -> new EntityNotFoundException("Customer " + customerID + " not found."));
     }
+
+    @Override
+    public List<Customer> findCustomerByKeyword(String keyword) {
+        List<Customer> list = customerrepo.findByCustnameContainingIgnoringCase(keyword);
+        return list;
+    }
 }

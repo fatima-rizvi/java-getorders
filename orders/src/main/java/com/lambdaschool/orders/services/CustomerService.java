@@ -12,4 +12,6 @@ public interface CustomerService {
 
     Customer findCustomerByID(long customerID);
 
+    List<Customer> findCustomerByKeyword(String keyword);
+
 }
